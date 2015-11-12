@@ -5,7 +5,37 @@ MAINTAINER Hussani Oliveira
 WORKDIR /tmp
 
 RUN apt-get update
-RUN apt-get install -y make autoconf bison re2c apache2-dev git wget libgmp-dev libcurl4-openssl-dev libmcrypt-dev libxml2-dev libjpeg-dev libjpeg62 libfreetype6-dev libmysqlclient-dev libgmp-dev libpspell-dev libicu-dev librecode-dev apache2 systemtap-sdt-dev pkg-config libssl-dev libz-dev zlib1g-dbg libbz2-dev libdb-dev libedit-dev libicu-dev libgdbm-dev unixodbc-dev libxslt-dev libldb-dev
+RUN apt-get install -y make \
+    autoconf \
+    bison \
+    re2c \
+    apache2-dev \
+    git \
+    wget \
+    libgmp-dev \
+    libcurl4-openssl-dev \
+    libmcrypt-dev \
+    libxml2-dev \
+    libjpeg-dev \
+    libjpeg62 \
+    libfreetype6-dev \
+    libmysqlclient-dev \
+    libpspell-dev \
+    libicu-dev \
+    librecode-dev \
+    apache2 \
+    systemtap-sdt-dev \
+    pkg-config \
+    libssl-dev \
+    libz-dev \
+    zlib1g-dbg \
+    libbz2-dev \
+    libdb-dev \
+    libedit-dev \
+    libgdbm-dev \
+    unixodbc-dev \
+    libxslt-dev \
+    libldb-dev
 
 WORKDIR /php7-binaries
 
