@@ -115,13 +115,11 @@ RUN  apt-get update \
   && ./configure ${CONFIGURE_STRING} \
   && make \
   && make install \
-  && ln -s /usr/local/php7/7.0.0/bin/php /usr/bin/php \
   && wget http://pear.php.net/go-pear.phar \
-  && php go-pear.phar \
+  && /usr/local/php7/7.0.0/bin/php go-pear.phar \
+  && ln -s /usr/local/php7/7.0.0/bin/* /usr/bin/ \
   && apt-get autoremove --purge \
   && apt-get clean \
   && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/* ${TMP_FOLDER}
-
-RUN php -v
 
 CMD ["php"]
