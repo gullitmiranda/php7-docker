@@ -2,6 +2,8 @@ FROM azukiapp/debian:jessie
 
 MAINTAINER Hussani Oliveira
 
+ENV PHP_BRANCH PHP-7.0.0
+
 RUN  apt-get update \
   && packages=" \
     build-essential \
@@ -44,9 +46,9 @@ RUN  apt-get update \
   && FPM_USER=root \
   && mkdir -p ${TMP_FOLDER} \
   && cd ${TMP_FOLDER} \
-  && wget https://github.com/php/php-src/archive/master.tar.gz \
-  && tar -zxvf master.tar.gz \
-  && cd php-src-master \
+  && wget "https://github.com/php/php-src/archive/${PHP_BRANCH}.tar.gz" \
+  && tar -zxvf ${PHP_BRANCH}.tar.gz \
+  && cd php-src-${PHP_BRANCH} \
   && ./buildconf --force \
   && CONFIGURE_STRING=" \
     --prefix=/usr/local/php7/7.0.0 \
